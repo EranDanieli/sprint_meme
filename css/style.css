@@ -1,0 +1,159 @@
+body{
+    background-color: rgb(37, 36, 36);
+}
+.modal{
+    height: 80vh;
+    /* width: 80vw; */
+    /* background-color: white; */
+   border-radius: 10px;
+    margin: 20px 15px ;
+}
+.hidden{
+    display: none;
+}
+.logo{
+    height: 60px;
+    margin: 10px 0 30px;
+}
+.logo:hover{
+    cursor: pointer;
+}
+#my-canvas{
+    border-radius: 15px;
+    height: 100%;
+    min-width: 100%;
+    max-width: 100%;
+}
+.main-layout {
+    max-width: 95vw;
+    margin: 5px auto;
+}
+.canvas-container{
+    height: 80%;
+    /* min-width: 50%; */
+    max-width: 50%;
+    margin: auto;
+    /* background-color: blue; */
+    border: 5px solid grey;
+    border-radius: 20px;
+}
+.main-nav *{
+margin-inline-end: 30px;}
+.nav-btn{
+    text-decoration: none;
+    color: white;
+    font-size: 35px;
+    font-weight: 400;
+}
+button:hover{
+    cursor: pointer;
+}
+
+.editor-container{
+    height: 80%;
+    min-width: 40%;
+    margin: auto;
+    background-color: rgb(61, 71, 69/0.9);
+    border: 7px solid grey;
+    border-radius: 20px;
+    grid-column: 2/-1;
+    grid-row: 1/-1;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 1fr 2fr 1.5fr 1fr .8fr;
+}
+header{
+    background-color: rgb(83, 78, 78);
+    border-radius: 25px;
+    background-image: linear-gradient(to right, rgb(30, 136, 223) , rgb(12, 250, 119));
+    margin: 15px 5px
+}
+.scrollable-element {
+    scrollbar-color: rgb(30, 136, 223) rgb(30, 136, 223);
+  }
+.canvas-editor-container{
+    margin: auto;
+    height: 100%;
+    width: 95%;
+    background-color: blanchedalmond;
+    gap: 10px 40px;
+    grid-template-columns: 1fr 1fr ;
+    /* grid-template-rows: 1fr 1fr 2fr 2fr 1fr ; */
+}
+
+.gallery,.search-container{
+    background-color: grey;
+    margin: 0 15px;
+}
+
+.grid-container{
+    display: grid;
+    gap: 0 30px ;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
+    margin: 0px 20px 20px;
+}
+.card{
+    object-fit: cover;
+    width: 100%;
+    height: 80%;
+    margin: 10px;
+      border-radius: 15px;
+      box-shadow: 5px 3px 15px 2px #000000;
+}
+.card:hover{
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.7);
+    transition: .8s;
+    cursor: pointer;
+}
+/* HELPERS */
+.clean-list{
+    list-style: none;
+}
+.flex{
+    display: flex;
+}
+.flex-column{
+    flex-direction: column;
+}
+.space-between{
+ justify-content: space-between;   
+}
+.align-items{
+    align-items: center;
+}
+.grid{
+    display: grid;
+}
+.align-self{
+    align-self: center;
+}
+.justify-self{
+    justify-self: center;
+}
+
+/* CANVAS EDITOR ELEMENTS */
+.text-input-editor{
+    grid-row: 1/2;
+    grid-column: 1/2;
+  
+}
+.up-plus-delete-btns{
+    grid-row: 2/3;
+    grid-column: 1/2;
+}
+.font-btns{
+    grid-row: 3/4;
+    grid-column: 1/2;
+}
+.sticker-bar{
+    grid-row: 4/5;
+    grid-column: 1/2;
+}
+.share-download-btns{
+    grid-row: 5/6;
+    grid-column: 1/2;
+}
+.last-row{
+    grid-row:6/-1 ;
+    grid-column: 1/2;
+    text-align: center;
+}
