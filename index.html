@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body onload="onInit()">
     <header class="header">
@@ -18,69 +18,36 @@
         </ul>
     </div>
     </header>
-
-    <div class="search-gallery-container" >
-        <section class="search-container">
-            <div class="search-bar flex">
-                <input type="search" name="search-bar" id="search-bar">
-                <section class="search-words">place words here</section>
-            </div>
-    <main class="gallery main-container grid-container"  >
-        
-        <div><img onclick="onOpenModal(event)" class="card meme-1" src="./images/1.jpg" alt=""></div>
-        <div><img onclick="onOpenModal(event)" class="card meme-2" src="./images/2.jpg" alt=""></div>
-        <div><img onclick="onOpenModal(event)" class="card meme-3" src="./images/3.jpg" alt=""></div>
-        <div><img onclick="onOpenModal(event)" class="card meme-4" src="./images/4.jpg" alt=""></div>
-        <div><img onclick="onOpenModal(event)" class="card meme-5" src="./images/5.jpg" alt=""></div>
-        <div><img onclick="onOpenModal(event)" class="card meme-6" src="./images/6.jpg" alt=""></div>
-        <div><img onclick="onOpenModal(event)" class="card meme-7" src="./images/7.jpg" alt=""></div>
-        <div><img onclick="onOpenModal(event)" class="card meme-8" src="./images/8.jpg" alt=""></div>
-        <div><img onclick="onOpenModal(event)" class="card meme-9" src="./images/9.jpg" alt=""></div>
-        <div><img onclick="onOpenModal(event)" class="card meme-10" src="./images/10.jpg" alt=""></div>
-        <div><img onclick="onOpenModal(event)" class="card meme-11" src="./images/11.jpg" alt=""></div>
-        <div><img onclick="onOpenModal(event)" class="card meme-12" src="./images/12.jpg" alt=""></div>
-        <div><img onclick="onOpenModal(event)" class="card meme-13" src="./images/13.jpg" alt=""></div>
-        <div><img onclick="onOpenModal(event)" class="card meme-14" src="./images/14.jpg" alt=""></div>
-        <div><img onclick="onOpenModal(event)" class="card meme-15" src="./images/15.jpg" alt=""></div>
-        <div><img onclick="onOpenModal(event)" class="card meme-16" src="./images/16.jpg" alt=""></div>
-        <div><img onclick="onOpenModal(event)" class="card meme-17" src="./images/17.jpg" alt=""></div>
-        <div><img onclick="onOpenModal(event)" class="card meme-18" src="./images/18.jpg" alt=""></div>
-
-    
+    <main class="gallery grid-container"  >
+        <div class="grid-items">
+    </div>
     </main>
-</div>
-
     <section class="modal modal-container flex"  >
-        <!-- <div class="canvas-editor-container flex "> -->
-          
-
         <div class="canvas-container ">
             <canvas id="my-canvas" height="500px" width="500px" ></canvas>
         </div>
-
         <div class="editor-container grid ">
-            <!-- <div class="editor">asdfghjk</div> -->
-            <div class="text-input-editor align-self justify-self "> <input type="text" placeholder="text-input-editor" onkeyup="drawText(value)"></div>
+            <div class="text-input-editor align-self justify-self "> <input type="text" class="text-input" placeholder="text-input-editor ✔" oninput="onSetText(this.value)"></div>
             <div class="up-plus-delete-btns align-self justify-self">
-                <button>⬆⬇</button>
-                <button>➕</button>
+                <button onclick="onChangeLine()">⬆⬇✔</button>
+                <button onclick="onAddLine()">➕✔</button>
                 <button>🧺</button>
             </div>
             <div class="font-btns align-self justify-self">
-                <button>🅰</button>
-                <button>🅰</button>
-                <button>align</button>
-                <button>align</button>
-                <button>align</button>
+                <button onclick="onRaiseSize()">🅰+✔</button>
+                <button onclick="onLowerSize()">🅰-✔</button>
+                <button value="end" onclick="onAlignTxt(this)">align-L ✔</button>
+                <button value="center" onclick="onAlignTxt(this)">align-C✔</button>
+                <button value="start" onclick="onAlignTxt(this)">align-R✔</button>
                 <button><select name="font-selector" id="font-selector">select font</select></button>
                 <button>S</button>
-                <button><input type="color" name="color-input" id="color-input"></button>
+                <button ><input onblur="onChangeColor(this)" type="color" name="color-input" id="color-input">✔</button>
             </div>
             <div class="sticker-bar align-self justify-self">sticker bar</div>
             <div class="share-download-btns align-self justify-self">
-                <button onclick="uploadImg()">Share Btn(works)</button>
+                <button onclick="uploadImg()">Share Btn✔</button>
    
-                <a href="#" class="btn" onclick="downloadImg(this)" download="my-img.jpg">Download(works)</a>
+                <a href="#" class="btn" onclick="downloadImg(this)" download="my-img.jpg">Download✔</a>
                 
             </div>
             <div class="last-row align-items justify-self">
@@ -88,13 +55,9 @@
             <p class="user-msg"></p>
             </div>
         </div>
-
   </section>
-
-
-
-
-
+    <script src="./js/main-service.js"></script>
+    <script src="./js/share-dwnld-service.js"></script>
     <script src="./js/main.js"></script>
 </body>
 </html>
