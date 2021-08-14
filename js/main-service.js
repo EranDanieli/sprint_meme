@@ -21,6 +21,8 @@ function renderGallery(){
 function renderCanvas() {
         
     let meme = getGCurrMeme()
+   
+    console.log('meme',meme)
     let currImg =  gImgs.find(img=>{
         return   img.id === meme.id
     })
@@ -95,6 +97,9 @@ function drawText(line) {
 }
 function openModal(ev){
     resetLineIdx()
+    getGCurrMeme().lines[0].txt=''
+    getGCurrMeme().lines[1].txt=''
+    getGCurrMeme().lines[2].txt=''
     document.querySelector('.gallery').style.display='none'
     document.querySelector('.modal').style.display = 'flex' ;
     updateGMeme(+ev.target.dataset.meme)
