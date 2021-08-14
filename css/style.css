@@ -7,6 +7,13 @@ header{
     background-image: linear-gradient(to right, rgb(30, 136, 223) , rgb(12, 250, 119));
     margin: 15px 5px
 }
+.user-msg{
+    color: white;
+}
+a.btn{
+    color: white;
+    font-size: larger;
+}
 @font-face {
     font-family: 'poppins';
     src: url(/fonts/Poppins-Light.ttf);
