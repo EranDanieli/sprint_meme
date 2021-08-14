@@ -13,7 +13,7 @@
         <div class="logo"> <img onclick="onGalleryClick()" class="logo" src="./images/LOGO.png" alt=""></div>
         <ul class="main-nav clean-list flex  ">
             <li><a class="nav-btn" onclick="onGalleryClick()" href="#">Gallery</a></li>
-            <li><a class="nav-btn" href="#">Memes</a></li>
+            <li><a onclick="openMemePage()" class="nav-btn" href="#">Memes</a></li>
             <li><a class="nav-btn" href="#">About</a></li>
         </ul>
     </div>
@@ -27,27 +27,25 @@
             <canvas id="my-canvas" height="500px" width="500px" ></canvas>
         </div>
         <div class="editor-container grid ">
-            <div class="text-input-editor align-self justify-self "> <input type="text" class="text-input" placeholder="text-input-editor ✔" oninput="onSetText(this.value)"></div>
+            <div class="text-input-editor align-self justify-self "> <input type="text" class="text-input" placeholder="Enter text" oninput="onSetText(this.value)"></div>
             <div class="up-plus-delete-btns align-self justify-self">
-                <button onclick="onChangeLine()">⬆⬇✔</button>
-                <button onclick="onAddLine()">➕✔</button>
-                <button>🧺</button>
+                <button class="arrows-btn clean-btn" onclick="onChangeLine()"> <img src="./images/arrows-btn.svg" alt=""></button>
+                <button class="plus-btn clean-btn" onclick="onAddLine()"><img src="./images/plus-btn.svg" alt=""></button>
+                <button class="delete-btn clean-btn "><img  src="./images/delete-btn.svg" alt=""></button>
             </div>
             <div class="font-btns align-self justify-self">
-                <button onclick="onRaiseSize()">🅰+✔</button>
-                <button onclick="onLowerSize()">🅰-✔</button>
-                <button value="end" onclick="onAlignTxt(this)">align-L ✔</button>
-                <button value="center" onclick="onAlignTxt(this)">align-C✔</button>
-                <button value="start" onclick="onAlignTxt(this)">align-R✔</button>
-                <button><select name="font-selector" id="font-selector">select font</select></button>
-                <button>S</button>
-                <button ><input onblur="onChangeColor(this)" type="color" name="color-input" id="color-input">✔</button>
+                <button class="raise-size-btn clean-btn-2" onclick="onRaiseSize()"><img src="./images/bigger-txt.svg" alt=""></button>
+                <button class="smaller-btn clean-btn-2" onclick="onLowerSize()"><img src="./images/smaller-txt.svg" alt=""></button>
+                <button class="left-btn clean-btn-2" value="end" onclick="onAlignTxt(this)"><img src="./images/align-left.svg" alt=""></button>
+                <button class="center-btn clean-btn-2 " value="center" onclick="onAlignTxt(this)"><img src="./images/align-center.svg" alt=""></button>
+                <button class="right-btn clean-btn-2" value="start" onclick="onAlignTxt(this)"><img src="./images/align-right.svg" alt=""></button>
+                <button class="color-btn"><input class="clean-btn-2 " onblur="onChangeColor(this)" type="color" name="color-input" id="color-input" ></button>
             </div>
-            <div class="sticker-bar align-self justify-self">sticker bar</div>
+            <button class="save-meme-btn" onclick="saveMeme()">Save Meme</button>
             <div class="share-download-btns align-self justify-self">
-                <button onclick="uploadImg()">Share Btn✔</button>
+                <button class="share-btn clean-btn" onclick="uploadImg()"><img src="./images/share-btn.svg" alt=""></button>
    
-                <a href="#" class="btn" onclick="downloadImg(this)" download="my-img.jpg">Download✔</a>
+                <a href="#" class="btn download-btn clean-btn" onclick="downloadImg(this)" download="my-img.jpg"><img src="./images/download-btn.svg" alt=""></a>
                 
             </div>
             <div class="last-row align-items justify-self">
@@ -56,7 +54,9 @@
             </div>
         </div>
   </section>
+    <script src="./js/storage.js"></script>
     <script src="./js/main-service.js"></script>
+    <script src="./js/meme-service.js"></script>
     <script src="./js/share-dwnld-service.js"></script>
     <script src="./js/main.js"></script>
 </body>

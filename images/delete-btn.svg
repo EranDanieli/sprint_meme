@@ -1,0 +1,44 @@
+<svg 
+ xmlns="http://www.w3.org/2000/svg"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ width="58px" height="58px">
+<defs>
+<filter filterUnits="userSpaceOnUse" id="Filter_0" x="0px" y="0px" width="58px" height="58px"  >
+    <feOffset in="SourceAlpha" dx="0.262" dy="4.993" />
+    <feGaussianBlur result="blurOut" stdDeviation="0" />
+    <feFlood flood-color="rgb(140, 6, 6)" result="floodOut" />
+    <feComposite operator="atop" in="floodOut" in2="blurOut" />
+    <feComponentTransfer><feFuncA type="linear" slope="1"/></feComponentTransfer>
+    <feMerge>
+    <feMergeNode/>
+    <feMergeNode in="SourceGraphic"/>
+  </feMerge>
+</filter>
+<linearGradient id="PSgrad_0" x1="61.566%" x2="0%" y1="78.801%" y2="0%">
+  <stop offset="1%" stop-color="rgb(207,29,55)" stop-opacity="1" />
+  <stop offset="100%" stop-color="rgb(240,80,54)" stop-opacity="1" />
+</linearGradient>
+<filter filterUnits="userSpaceOnUse" id="Filter_1" x="11px" y="11px" width="35px" height="38px"  >
+    <feOffset in="SourceAlpha" dx="0.157" dy="2.996" />
+    <feGaussianBlur result="blurOut" stdDeviation="1" />
+    <feFlood flood-color="rgb(140, 6, 6)" result="floodOut" />
+    <feComposite operator="atop" in="floodOut" in2="blurOut" />
+    <feComponentTransfer><feFuncA type="linear" slope="0.61"/></feComponentTransfer>
+    <feMerge>
+    <feMergeNode/>
+    <feMergeNode in="SourceGraphic"/>
+  </feMerge>
+</filter>
+
+</defs>
+<g filter="url(#Filter_0)">
+<path fill-rule="evenodd"  fill="rgb(235, 238, 243)"
+ d="M10.117,0.401 L47.072,0.401 C52.595,0.401 57.072,4.878 57.072,10.401 L57.072,42.421 C57.072,47.944 52.595,52.421 47.072,52.421 L10.117,52.421 C4.594,52.421 0.117,47.944 0.117,42.421 L0.117,10.401 C0.117,4.878 4.594,0.401 10.117,0.401 Z"/>
+</g>
+<path fill="url(#PSgrad_0)"
+ d="M10.117,0.401 L47.072,0.401 C52.595,0.401 57.072,4.878 57.072,10.401 L57.072,42.421 C57.072,47.944 52.595,52.421 47.072,52.421 L10.117,52.421 C4.594,52.421 0.117,47.944 0.117,42.421 L0.117,10.401 C0.117,4.878 4.594,0.401 10.117,0.401 Z"/>
+<g filter="url(#Filter_1)">
+<path fill-rule="evenodd"  fill="rgb(235, 238, 243)"
+ d="M14.976,17.017 L14.976,13.094 L24.709,13.094 L24.709,11.132 L32.496,11.132 L32.496,13.094 L42.230,13.094 L42.230,17.017 L14.976,17.017 ZM40.283,38.593 C40.283,40.756 38.537,42.517 36.390,42.517 L20.816,42.517 C18.668,42.517 16.922,40.756 16.922,38.593 L16.922,18.978 L40.283,18.978 L40.283,38.593 Z"/>
+</g>
+</svg>

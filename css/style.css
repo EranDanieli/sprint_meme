@@ -1,12 +1,61 @@
 body{
     background-color: rgb(37, 36, 36);
 }
+header{
+    background-color: rgb(83, 78, 78);
+    border-radius: 25px;
+    background-image: linear-gradient(to right, rgb(30, 136, 223) , rgb(12, 250, 119));
+    margin: 15px 5px
+}
+@font-face {
+    font-family: 'poppins';
+    src: url(/fonts/Poppins-Light.ttf);
+}
+/* MODAL - EDITOR+CANVAS */
 .modal{
-    height: 80vh;
-    /* width: 80vw; */
-    /* background-color: white; */
+    height: 75vh;
    border-radius: 10px;
     margin: 20px 15px ;
+    justify-content: center;
+}
+.canvas-container{
+    height: 77%;
+    min-width: 27rem;
+    margin: 5%;
+    border: 7px solid #383b42;;
+    border-radius: 20px;
+}
+#my-canvas{
+    border-radius: 15px;
+    height: 100%;
+    min-width: 100%;
+    max-width: 100%;
+}
+.editor-container{
+    background-color: #383b42;
+    height: 80%;
+    min-width: 30rem;
+    margin: 5%;
+    background-color: rgb(61, 71, 69/0.9);
+    /* border: 7px solid grey; */
+    border-radius: 20px;
+    grid-column: 2/-1;
+    grid-row: 1/-1;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 1fr 2fr 1.5fr 1fr .8fr;
+}
+.canvas-editor-container{
+    margin: 5%;
+    height: 100%;
+    width: 95%;
+    background-color: blanchedalmond;
+    gap: 10px 40px;
+    grid-template-columns: 1fr 1fr ;
+}
+.search-gallery-container{
+    display: flex;
+    flex-direction: column;
+
 }
 .hidden{
     display: none;
@@ -18,27 +67,14 @@ body{
 .logo:hover{
     cursor: pointer;
 }
-#my-canvas{
-    border-radius: 15px;
-    height: 100%;
-    min-width: 100%;
-    max-width: 100%;
-}
 .main-layout {
     max-width: 95vw;
     margin: 5px auto;
 }
-.canvas-container{
-    height: 80%;
-    /* min-width: 50%; */
-    max-width: 50%;
-    margin: auto;
-    /* background-color: blue; */
-    border: 5px solid grey;
-    border-radius: 20px;
-}
 .main-nav *{
-margin-inline-end: 30px;}
+    font-family: 'poppins';
+margin-inline-end: 30px;
+}
 .nav-btn{
     text-decoration: none;
     color: white;
@@ -49,41 +85,7 @@ button:hover{
     cursor: pointer;
 }
 
-.editor-container{
-    height: 80%;
-    min-width: 40%;
-    margin: auto;
-    background-color: rgb(61, 71, 69/0.9);
-    border: 7px solid grey;
-    border-radius: 20px;
-    grid-column: 2/-1;
-    grid-row: 1/-1;
-    grid-template-columns: 100%;
-    grid-template-rows: 1fr 1fr 2fr 1.5fr 1fr .8fr;
-}
-header{
-    background-color: rgb(83, 78, 78);
-    border-radius: 25px;
-    background-image: linear-gradient(to right, rgb(30, 136, 223) , rgb(12, 250, 119));
-    margin: 15px 5px
-}
-.scrollable-element {
-    scrollbar-color: rgb(30, 136, 223) rgb(30, 136, 223);
-  }
-.canvas-editor-container{
-    margin: auto;
-    height: 100%;
-    width: 95%;
-    background-color: blanchedalmond;
-    gap: 10px 40px;
-    grid-template-columns: 1fr 1fr ;
-    /* grid-template-rows: 1fr 1fr 2fr 2fr 1fr ; */
-}
-.search-gallery-container{
-    display: flex;
-    flex-direction: column;
-
-}
+/* GALLERY */
 .search-bar{
     background-color: grey;
 }
@@ -119,6 +121,15 @@ header{
     transition: .8s;
     cursor: pointer;
 }
+
+.text-input{
+    border-radius: 20px;
+    padding: 10px;
+    text-align: center;
+    width: 20rem;
+    margin: 15px;
+}
+
 /* HELPERS */
 .clean-list{
     list-style: none;
@@ -144,11 +155,16 @@ header{
 .justify-self{
     justify-self: center;
 }
+.clean-btn{
+    background-color: #383b42;
+    border: none;
+}
 
 /* CANVAS EDITOR ELEMENTS */
 .text-input-editor{
     grid-row: 1/2;
     grid-column: 1/2;
+    
   
 }
 .up-plus-delete-btns{
@@ -158,10 +174,30 @@ header{
 .font-btns{
     grid-row: 3/4;
     grid-column: 1/2;
+    width: 350px;
+    justify-self: center;
+    background-color: #19a59f;
+    padding: 10px;
+    border-radius: 10px;
+    background-image: linear-gradient(
+1deg
+, #00000061, transparent);
+}
+button.color-btn{
+    position: fixed;
+    margin-top: 13px;
+}
+.font-btns *{
+    margin: 3px;
+}
+.clean-btn-2{
+    background-color: transparent;
+    border: none;
 }
 .sticker-bar{
     grid-row: 4/5;
     grid-column: 1/2;
+    margin: 10px;
 }
 .share-download-btns{
     grid-row: 5/6;
@@ -172,3 +208,60 @@ header{
     grid-column: 1/2;
     text-align: center;
 }
+.save-meme-btn{
+    width: fit-content;
+    justify-self: center;
+    height: max-content;
+    padding: 10px;
+    align-self: center;
+    border-radius: 20px;
+    margin: 10px;
+}
+@media screen and (max-width: 450px) {
+    .header{
+        width: 98%;
+    }
+   .header-layout{
+       flex-direction: column;
+       justify-content: center;
+   }
+   .main-nav{
+    flex-direction: column;
+
+   }
+    .grid-items{
+        gap: 10px 10px;
+        grid-template-columns: repeat(auto-fit, minmax(17%,40%));
+    }
+    .grid-container{
+        min-width: 400px
+    }
+    .modal-container{
+        flex-direction: column;
+        margin-top: 100px;
+    }
+    .canvas-container {
+        height: 45%;
+        width: 300px;
+        min-width: 20rem;
+        margin-top: 10rem;
+    }
+    .editor-container{
+        min-width:20rem;
+        height: 500px;
+    }
+    .font-btns{
+        width: 250px;
+    }
+    .sticker-bar {
+       width: 250px;
+    }
+    button.color-btn {
+        position: absolute;
+        margin-top: 15px;
+}
+.share-download-btns{
+    text-align: center;
+}
+}
+

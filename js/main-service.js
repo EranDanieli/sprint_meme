@@ -7,6 +7,8 @@ function init(){
     document.querySelector('.modal').style.display='none'
    createGImg()
    renderGallery()
+   
+   gSavedMeme = loadFromStorage('meme')
 }
 function renderGallery(){
     let strHTML =  `<div class="grid-items">`

@@ -37,9 +37,6 @@ var gCurrMeme = {
     ]
 }
 
-
-
-
 function onInit(){
     init()
     
@@ -62,25 +59,23 @@ function onSetText(ev){
     renderCanvas()
 }
 
-
 function onChangeLine(){
 changeLine()
 renderCanvas()
 }
 function onOpenModal(ev){
    openModal(ev)
-    }
-
-  
+    }  
     function onAlignTxt(ev){
         alignTxt(ev.value)
         renderCanvas()
     }
 
-   
 function onGalleryClick(){
     document.querySelector('.gallery').style.display='block'
     document.querySelector('.modal').style.display='none'
+    renderGallery()
+    
 }
 function onRaiseSize(){
     raiseSize()

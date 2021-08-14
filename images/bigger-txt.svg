@@ -1,0 +1,30 @@
+<svg 
+ xmlns="http://www.w3.org/2000/svg"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ width="56px" height="56px">
+<defs>
+<filter filterUnits="userSpaceOnUse" id="Filter_0" x="0px" y="0px" width="56px" height="56px"  >
+    <feOffset in="SourceAlpha" dx="0.262" dy="4.993" />
+    <feGaussianBlur result="blurOut" stdDeviation="0" />
+    <feFlood flood-color="rgb(92, 92, 92)" result="floodOut" />
+    <feComposite operator="atop" in="floodOut" in2="blurOut" />
+    <feComponentTransfer><feFuncA type="linear" slope="0.55"/></feComponentTransfer>
+    <feMerge>
+    <feMergeNode/>
+    <feMergeNode in="SourceGraphic"/>
+  </feMerge>
+</filter>
+<filter id="Filter_1">
+    <feFlood flood-color="rgb(255, 255, 255)" flood-opacity="1" result="floodOut" />
+    <feComposite operator="atop" in="floodOut" in2="SourceGraphic" result="compOut" />
+    <feBlend mode="normal" in="compOut" in2="SourceGraphic" />
+</filter>
+
+</defs>
+<g filter="url(#Filter_0)">
+<g filter="url(#Filter_1)">
+<path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
+ d="M10.825,0.840 L45.166,0.840 C50.689,0.840 55.166,5.317 55.166,10.840 L55.166,40.805 C55.166,46.327 50.689,50.805 45.166,50.805 L10.825,50.805 C5.303,50.805 0.825,46.327 0.825,40.805 L0.825,10.840 C0.825,5.317 5.303,0.840 10.825,0.840 Z"/>
+</g></g>
+<text kerning="auto" font-family="Myriad Pro" fill="rgb(0, 0, 0)" transform="matrix( 0.62052629591741, 0, 0, 0.62052629591741,10.3304481013645, 36.3588999154067)" font-size="51.636px"><tspan font-size="51.636px" font-family="Poppins" fill="#22252C">A</tspan><tspan font-size="51.636px" font-family="Poppins" baseline-shift="super" fill="#22252C">&#43;</tspan></text>
+</svg>
