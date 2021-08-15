@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,57 +8,89 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body onload="onInit()">
     <header class="header">
         <div class="header-layout flex main-layout space-between align-items">
-        <div class="logo"> <img onclick="onGalleryClick()" class="logo" src="./images/LOGO.png" alt=""></div>
-        <ul class="main-nav clean-list flex  ">
-            <li><a class="nav-btn" onclick="onGalleryClick()" href="#">Gallery</a></li>
-            <li><a onclick="openMemePage()" class="nav-btn" href="#">Memes</a></li>
-            <li><a class="nav-btn" href="#">About</a></li>
-        </ul>
-    </div>
+            <div class="logo"> <img onclick="onGalleryClick()" class="logo" src="./images/LOGO.png" alt=""></div>
+            <ul class="main-nav clean-list flex  ">
+                <li><a class="nav-btn" onclick="onGalleryClick()" href="#">Gallery</a></li>
+                <li><a onclick="openMemePage()" class="nav-btn" href="#">Memes</a></li>
+                <li><a class="nav-btn" href="#">About</a></li>
+            </ul>
+        </div>
     </header>
-    <main class="gallery grid-container"  >
+    <main class="gallery grid-container">
         <div class="grid-items">
-    </div>
+        </div>
     </main>
-    <section class="modal modal-container flex"  >
+    <section class="modal modal-container flex">
         <div class="canvas-container ">
-            <canvas id="my-canvas" height="500px" width="500px" ></canvas>
+            <canvas id="my-canvas" height="500px" width="500px"></canvas>
         </div>
         <div class="editor-container grid ">
-            <div class="text-input-editor align-self justify-self "> <input type="text" class="text-input" placeholder="Enter text" oninput="onSetText(this.value)"></div>
+            <div class="text-input-editor align-self justify-self ">
+                <input type="text" class="text-input" placeholder="Enter text" oninput="onSetText(this.value)">
+            </div>
             <div class="up-plus-delete-btns align-self justify-self">
-                <button class="arrows-btn clean-btn" onclick="onChangeLine()"> <img src="./images/arrows-btn.svg" alt=""></button>
-                <button class="plus-btn clean-btn" onclick="onAddLine()"><img src="./images/plus-btn.svg" alt=""></button>
-                <button class="delete-btn clean-btn "><img  src="./images/delete-btn.svg" alt=""></button>
+                <button class="arrows-btn clean-btn" onclick="onChangeLine()"> 
+                    <img src="./images/arrows-btn.svg" alt="">
+                </button>
+                <button class="plus-btn clean-btn" onclick="onAddLine()">
+                    <img src="./images/plus-btn.svg" alt="">
+                </button>
+                <button class="delete-btn clean-btn " onclick="onRemoveLine()">
+                    <img  src="./images/delete-btn.svg" alt="">
+                </button>
             </div>
             <div class="font-btns align-self justify-self">
-                <button class="raise-size-btn clean-btn-2" onclick="onRaiseSize()"><img src="./images/bigger-txt.svg" alt=""></button>
-                <button class="smaller-btn clean-btn-2" onclick="onLowerSize()"><img src="./images/smaller-txt.svg" alt=""></button>
-                <button class="left-btn clean-btn-2" value="end" onclick="onAlignTxt(this)"><img src="./images/align-left.svg" alt=""></button>
-                <button class="center-btn clean-btn-2 " value="center" onclick="onAlignTxt(this)"><img src="./images/align-center.svg" alt=""></button>
-                <button class="right-btn clean-btn-2" value="start" onclick="onAlignTxt(this)"><img src="./images/align-right.svg" alt=""></button>
-                <button class="color-btn"><input class="clean-btn-2 " onblur="onChangeColor(this)" type="color" name="color-input" id="color-input" ></button>
+                <button class="raise-size-btn clean-btn-2" onclick="onRaiseSize()">
+                    <img src="./images/bigger-txt.svg" alt="">
+                </button>
+                <button class="smaller-btn clean-btn-2" onclick="onLowerSize()">
+                    <img src="./images/smaller-txt.svg" alt="">
+                </button>
+                <button class="left-btn clean-btn-2" value="end" onclick="onAlignTxt(this)">
+                    <img src="./images/align-left.svg" alt="">
+                </button>
+                <button class="center-btn clean-btn-2 " value="center" onclick="onAlignTxt(this)">
+                    <img src="./images/align-center.svg" alt="">
+                </button>
+                <button class="right-btn clean-btn-2" value="start" onclick="onAlignTxt(this)">
+                    <img src="./images/align-right.svg" alt="">
+                </button>
+
+
+                <select class="font-selector" onchange="onChangeFont(this.value)" name="font-selector" id="font-selector">
+                    <option value="impact">Impact</option>
+                    <option value="mosaic">Mosaic</option>
+                    <option value="stylescript">StyleScript</option>
+                </select>
+                <label for="color-input">
+                    <img src="./images/color-btn.svg" alt="">
+                    <input class="clean-btn-2 color-input" onblur="onChangeColor(this)" type="color" name="color-input" id="color-input">
+                </label>
+                <input class="stroke-selector" onblur="onChangeStroke(this.value)" type="color" name="stroke-selector" id="stroke-selector">
+                <!-- <img src="/images/stroke-btn.svg" alt=""> -->
             </div>
             <button class="save-meme-btn" onclick="saveMeme()">Save Meme</button>
             <div class="share-download-btns align-self justify-self">
                 <button class="share-btn clean-btn" onclick="uploadImg()"><img src="./images/share-btn.svg" alt=""></button>
-   
+
                 <a href="#" class="btn download-btn clean-btn" onclick="downloadImg(this)" download="my-img.jpg"><img src="./images/download-btn.svg" alt=""></a>
-                
+
             </div>
             <div class="last-row align-items justify-self">
-            <div class="share-container"></div>
-            <p class="user-msg"></p>
+                <div class="share-container"></div>
+                <p class="user-msg"></p>
             </div>
         </div>
-  </section>
+    </section>
     <script src="./js/storage.js"></script>
-    <script src="./js/main-service.js"></script>
+    <script src="./js/controller-service.js"></script>
     <script src="./js/meme-service.js"></script>
     <script src="./js/share-dwnld-service.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="./js/controller.js"></script>
 </body>
+
 </html>
